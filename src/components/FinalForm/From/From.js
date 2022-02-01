@@ -6,17 +6,15 @@ import './form.css'
 // create from component
 const From = (props) => {
     const { setDeparture } = props
-
     const { register, handleSubmit } = useForm();
     const onSubmit = data => setDeparture(data);
     return (
-        <div>
+        <div className='form-area'>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Departure</label>
                 <input placeholder='Select departure' {...register("departure")} />
             </form>
-        </div>
+        </div >
     );
 };
-
 export default From;
