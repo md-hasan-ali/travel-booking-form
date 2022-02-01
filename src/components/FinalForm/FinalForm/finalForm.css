@@ -1,0 +1,16 @@
+.final-form-area {
+    background-image: url(http://localhost:3000/static/media/bg-image.28be44163050b9d625ef.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    width: 100%;
+}
+.form-container {
+    background: #fff;
+    opacity: .9;
+    margin-top: 100px;
+    padding: 30px 15px;
+}

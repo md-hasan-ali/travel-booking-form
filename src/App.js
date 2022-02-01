@@ -1,9 +1,10 @@
 import './App.css';
+import FinalFrom from './components/FinalForm/FinalForm/FinalFrom';
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <FinalFrom></FinalFrom>
     </div>
   );
 }
