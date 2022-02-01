@@ -2,16 +2,20 @@
 import React, { useState } from 'react';
 import './finalForm.css'
 import From from '../From/From';
-import To from '../To/To';
+import Departure from '../Departure/Departure';
+import TravelClassPassenger from '../TravelClassPassenger/TravelClassPassenger';
 
 // create final from component
 const FinalFrom = () => {
-    const [departure, setDeparture] = useState('');
+    const [from, setFrom] = useState('');
     const [to, setTo] = useState('')
+    const [departure, setDeparture] = useState(0);
+    const [backdate, setBackdate] = useState(0);
 
-    console.log(departure)
-    console.log(to)
-
+    const handleInput = () => {
+        const result = { from, to, departure, backdate }
+        console.log(result)
+    }
     return (
         <section className="final-form-area">
             <div className="container form-container">
@@ -21,15 +25,37 @@ const FinalFrom = () => {
                 <div className="row">
                     <div className="col-md-4">
                         <div className="from">
-                            <From setDeparture={setDeparture}></From>
+                            <From inputValue={setFrom} label={'Departure'}></From>
                         </div>
                     </div>
+
                     <div className="col-md-4">
                         <div className="from">
-                            <To setTo={setTo}></To>
+                            <From inputValue={setTo} label={'To'}></From>
+                        </div>
+                    </div>
+
+                    <div className="col-md-2">
+                        <div className="from">
+                            <Departure inputDate={setDeparture} label={'Departure'}></Departure>
+                        </div>
+                    </div>
+
+                    <div className="col-md-2">
+                        <div className="from">
+                            <Departure inputDate={setBackdate} label={'Return'}></Departure>
+                        </div>
+                    </div>
+
+                    <div className="col-md-4 mt-4">
+                        <div className="from">
+                            <label>Travel Class Or Passenger</label>
+                            <TravelClassPassenger></TravelClassPassenger>
                         </div>
                     </div>
                 </div>
+                <br />
+                <button onClick={handleInput}>click</button>
             </div>
         </section>
     );

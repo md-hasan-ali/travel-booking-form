@@ -1,19 +1,18 @@
 // import necessary file 
 import React from 'react';
-import { useForm } from "react-hook-form";
 import './form.css'
 
 // create from component
-const From = (props) => {
-    const { setDeparture } = props
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => setDeparture(data);
+const From = ({ inputValue, label }) => {
+
+    const handleOnchange = (e) => {
+        inputValue(e.target.value);
+    }
+
     return (
         <div className='form-area'>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label>Departure</label>
-                <input placeholder='Select departure' {...register("departure")} />
-            </form>
+            <label>{label}</label>
+            <input onChange={handleOnchange} placeholder='Select departure' />
         </div >
     );
 };

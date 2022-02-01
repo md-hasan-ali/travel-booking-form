@@ -1,16 +1,15 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
 
 const To = (props) => {
     const { setTo } = props;
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => setTo(data);
+
+    const handleOnchange = (e) => {
+        setTo(e.target.value);
+    }
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label>To</label>
-                <input placeholder='Select departure' {...register("to")} />
-            </form>
+            <label>To</label>
+            <input onChange={handleOnchange} placeholder='Select Destination' />
         </div>
     );
 };
