@@ -4,6 +4,7 @@ import './finalForm.css'
 import From from '../From/From';
 import Departure from '../Departure/Departure';
 import TravelClassPassenger from '../TravelClassPassenger/TravelClassPassenger';
+import VoucherCode from '../VoucherCode/VoucherCode';
 
 // create final from component
 const FinalFrom = () => {
@@ -12,9 +13,10 @@ const FinalFrom = () => {
     const [departure, setDeparture] = useState(0);
     const [backdate, setBackdate] = useState(0);
     const [travelClass, setTravelClass] = useState('premium');
+    const [voucher, setVoucher] = useState();
 
     const handleInput = () => {
-        const result = { from, to, departure, backdate, travelClass }
+        const result = { from, to, departure, backdate, travelClass, voucher }
         console.log(result)
     }
 
@@ -53,6 +55,12 @@ const FinalFrom = () => {
                         <div className="from">
                             <label className='mb-2'>Travel Class Or Passenger</label>
                             <TravelClassPassenger setTravelClass={setTravelClass} travelClass={travelClass}></TravelClassPassenger>
+                        </div>
+                    </div>
+
+                    <div className="col-md-4 mt-4">
+                        <div className="from">
+                            <VoucherCode setVoucher={setVoucher} label={'Voucher Or Event Code'}></VoucherCode>
                         </div>
                     </div>
 
