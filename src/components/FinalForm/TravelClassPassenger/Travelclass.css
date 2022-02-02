@@ -1,0 +1,27 @@
+.travel-class button {
+    width: 100%;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(187, 183, 183);
+    background:#e3e8f0;
+    text-align: left;
+}
+.travel-class button i {
+    padding-left: 80px;
+    font-size: 14px;
+}
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 100px;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+    display: none;
+}
+select.form-select.dropdown-menu.show {
+    max-width: 353px;
+    margin-left: 31px;
+    padding-left: 10px;
+}

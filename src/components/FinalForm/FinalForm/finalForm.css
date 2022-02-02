@@ -1,5 +1,5 @@
 .final-form-area {
-    background-image: url(http://localhost:3000/static/media/bg-image.28be44163050b9d625ef.jpg);
+    background-image: url('../../../images/bg-image.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -13,4 +13,9 @@
     opacity: .9;
     margin-top: 100px;
     padding: 30px 15px;
+}
+.form-btn button {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
 }

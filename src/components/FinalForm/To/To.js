@@ -2,7 +2,6 @@ import React from 'react';
 
 const To = (props) => {
     const { setTo } = props;
-
     const handleOnchange = (e) => {
         setTo(e.target.value);
     }

@@ -11,11 +11,13 @@ const FinalFrom = () => {
     const [to, setTo] = useState('')
     const [departure, setDeparture] = useState(0);
     const [backdate, setBackdate] = useState(0);
+    const [travelClass, setTravelClass] = useState('premium');
 
     const handleInput = () => {
-        const result = { from, to, departure, backdate }
+        const result = { from, to, departure, backdate, travelClass }
         console.log(result)
     }
+
     return (
         <section className="final-form-area">
             <div className="container form-container">
@@ -49,13 +51,20 @@ const FinalFrom = () => {
 
                     <div className="col-md-4 mt-4">
                         <div className="from">
-                            <label>Travel Class Or Passenger</label>
-                            <TravelClassPassenger></TravelClassPassenger>
+                            <label className='mb-2'>Travel Class Or Passenger</label>
+                            <TravelClassPassenger setTravelClass={setTravelClass} travelClass={travelClass}></TravelClassPassenger>
+                        </div>
+                    </div>
+
+
+                    <div className="col-md-4 mt-4 pt-4">
+                        <div className="from form-btn">
+                            <button onClick={handleInput} className='btn btn-primary'>Book Now</button>
                         </div>
                     </div>
                 </div>
                 <br />
-                <button onClick={handleInput}>click</button>
+
             </div>
         </section>
     );
