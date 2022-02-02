@@ -8,7 +8,7 @@ const VoucherCode = ({ setVoucher, label }) => {
         <div>
             <div className='form-area'>
                 <label>{label}</label>
-                <input type='text' onChange={handleVoucherCode} placeholder='Select departure' />
+                <input type='text' onChange={handleVoucherCode} placeholder='Enter Code' />
             </div >
         </div>
     );

@@ -5,6 +5,7 @@ import From from '../From/From';
 import Departure from '../Departure/Departure';
 import TravelClassPassenger from '../TravelClassPassenger/TravelClassPassenger';
 import VoucherCode from '../VoucherCode/VoucherCode';
+import BookingModal from '../BookingModal/BookingModal';
 
 // create final from component
 const FinalFrom = () => {
@@ -13,11 +14,12 @@ const FinalFrom = () => {
     const [departure, setDeparture] = useState(0);
     const [backdate, setBackdate] = useState(0);
     const [travelClass, setTravelClass] = useState('premium');
-    const [voucher, setVoucher] = useState();
+    const [voucher, setVoucher] = useState(0);
+    const [bookingModal, setBookingModal] = useState();
 
     const handleInput = () => {
         const result = { from, to, departure, backdate, travelClass, voucher }
-        console.log(result)
+        setBookingModal(result);
     }
 
     return (
@@ -64,15 +66,17 @@ const FinalFrom = () => {
                         </div>
                     </div>
 
-
-                    <div className="col-md-4 mt-4 pt-4">
+                    <div className="col-md-4 mt-5 pt-1">
                         <div className="from form-btn">
-                            <button onClick={handleInput} className='btn btn-primary'>Book Now</button>
+                            <button onClick={handleInput} className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop">Book Now</button>
                         </div>
                     </div>
                 </div>
                 <br />
-
+            </div>
+            {/* Booking Modal  */}
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <BookingModal bookingModal={bookingModal}></BookingModal>
             </div>
         </section>
     );
