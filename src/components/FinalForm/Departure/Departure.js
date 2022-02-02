@@ -1,7 +1,8 @@
+// import necessary file 
 import React from 'react';
 
+// Departure Component 
 const Departure = ({ inputDate, label }) => {
-
     const handleDateChange = (e) => {
         inputDate(e.target.value);
     }

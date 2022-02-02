@@ -1,6 +1,5 @@
 // import necessary file 
 import React from 'react';
-import './form.css'
 
 // create from component
 const From = ({ inputValue, label }) => {

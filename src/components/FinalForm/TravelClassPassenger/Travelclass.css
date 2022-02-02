@@ -20,8 +20,24 @@
     border-left: .3em solid transparent;
     display: none;
 }
-select.form-select.dropdown-menu.show {
+/* select.form-select.dropdown-menu.show {
     max-width: 353px;
     margin-left: 31px;
     padding-left: 10px;
+} */
+ul.dropdown-menu.show {
+    width: 100%;
+    padding: 30px;
+}
+select.select-class {
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+.increase-decrease-list p {
+    font-size: 25px;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: gray;
 }

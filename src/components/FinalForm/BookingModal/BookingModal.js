@@ -4,7 +4,6 @@ import './bookingModal.css'
 
 // Booking Modal Component 
 const BookingModal = ({ bookingModal }) => {
-    console.log(bookingModal)
     return (
         <div class="modal-dialog">
             <div class="modal-content">
