@@ -1,5 +1,7 @@
+// import necessary file 
 import React from 'react';
 
+// voucher or event code component 
 const VoucherCode = ({ setVoucher, label }) => {
     const handleVoucherCode = (e) => {
         setVoucher(e.target.value);

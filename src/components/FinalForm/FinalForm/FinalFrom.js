@@ -29,30 +29,27 @@ const FinalFrom = () => {
                     <h2 className='pb-4'>Flight Deals With our Country</h2>
                 </div>
                 <div className="row">
+
                     <div className="col-md-4">
                         <div className="from">
-                            <From inputValue={setFrom} label={'Departure'}></From>
+                            <From inputValue={setFrom} label={'From'}></From>
                         </div>
                     </div>
-
                     <div className="col-md-4">
                         <div className="from">
                             <From inputValue={setTo} label={'To'}></From>
                         </div>
                     </div>
-
                     <div className="col-md-2">
                         <div className="from">
                             <Departure inputDate={setDeparture} label={'Departure'}></Departure>
                         </div>
                     </div>
-
                     <div className="col-md-2">
                         <div className="from">
                             <Departure inputDate={setBackdate} label={'Return'}></Departure>
                         </div>
                     </div>
-
                     <div className="col-md-4 mt-4">
                         <div className="from">
                             <label className='mb-2'>Travel Class Or Passenger</label>
