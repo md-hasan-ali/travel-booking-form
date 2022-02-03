@@ -34,7 +34,7 @@ const TravelClassPassenger = ({ setTravelClass, travelClass }) => {
     }
     const handleSelectValue = (e) => {
         setTravelClass(e.target.value)
-        setTravelClass(adultincrease + youngAdultIncrease + childIncrease);
+        // setTravelClass(adultincrease + youngAdultIncrease + childIncrease);
     }
     return (
         <div className='travel-class'>
@@ -100,7 +100,8 @@ const TravelClassPassenger = ({ setTravelClass, travelClass }) => {
                             <p className='text-danger' onClick={handleInfantIncrease}>+</p>
                         </div>
                     </li>
-                    <button className='btn mb-5 text-center'>Done</button>
+                    <hr />
+                    <button className='done-button mb-5 text-center'>Done</button>
                 </ul>
             </div>
         </div >
