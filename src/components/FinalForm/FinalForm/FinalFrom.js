@@ -6,6 +6,7 @@ import Departure from '../Departure/Departure';
 import TravelClassPassenger from '../TravelClassPassenger/TravelClassPassenger';
 import VoucherCode from '../VoucherCode/VoucherCode';
 import BookingModal from '../BookingModal/BookingModal';
+import To from '../To/To';
 
 // create final from component
 const FinalFrom = () => {
@@ -26,62 +27,58 @@ const FinalFrom = () => {
         <section className="final-form-area">
             <div className="container form-container">
                 <div className="section-title text-center">
-                    <h2 className='pb-4'>Flight Deals With our Country</h2>
+                    <h2 className='pb-4 text-danger'>Flight Deals With our Country</h2>
                 </div>
-
                 <div className="oneway-or-return mb-4">
-                    <div class="form-check form-check-inline">
-                        <input onClick={() => setTrip(false)} class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                        <label class="form-check-label" for="inlineRadio1">One Way</label>
+                    <div className="form-check form-check-inline">
+                        <input onClick={() => setTrip(false)} className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                        <label className="form-check-label" htmlFor="inlineRadio1">One Way</label>
                     </div>
 
-                    <div class="form-check form-check-inline">
-                        <input onClick={() => setTrip(true)} class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                        <label class="form-check-label" for="inlineRadio2">Return Trip</label>
+                    <div className="form-check form-check-inline">
+                        <input onClick={() => setTrip(true)} className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                        <label className="form-check-label" htmlFor="inlineRadio2">Return Trip</label>
                     </div>
-
                 </div>
-
-
                 <div className="row">
                     {/* From */}
                     <div className="col-md-4">
-                        <div className="from">
-                            <From inputValue={setFrom} label={'From'}></From>
+                        <div className="from input-design">
+                            <From setFrom={setFrom} label={'From'}></From>
                         </div>
                     </div>
                     {/* To */}
                     <div className="col-md-4">
-                        <div className="from">
-                            <From inputValue={setTo} label={'To'}></From>
+                        <div className="to input-design">
+                            <To setTo={setTo} label={'To'}></To>
                         </div>
                     </div>
                     {/* Departure and Return are same component */}
                     <div className="col-md-2">
-                        <div className="from">
+                        <div className="departure input-design">
                             <Departure inputDate={setDeparture} label={'Departure'}></Departure>
                         </div>
                     </div>
                     <div className="col-md-2">
-                        {trip && <div className="from">
+                        {trip && <div className="return input-design">
                             <Departure inputDate={setBackdate} label={'Return'}></Departure>
                         </div>}
                     </div>
                     {/* Travel Class and Passengers  */}
-                    <div className="col-md-4 mt-4">
-                        <div className="from">
+                    <div className="col-md-4 mt-5">
+                        <div className="travel-class input-design">
                             <label className='mb-2'>Travel Class Or Passenger</label>
                             <TravelClassPassenger setTravelClass={setTravelClass} travelClass={travelClass}></TravelClassPassenger>
                         </div>
                     </div>
                     {/* Voucher and Event Code  */}
-                    <div className="col-md-4 mt-4">
-                        <div className="from">
+                    <div className="col-md-4 mt-5">
+                        <div className="voucher input-design">
                             <VoucherCode setVoucher={setVoucher} label={'Voucher Or Event Code'}></VoucherCode>
                         </div>
                     </div>
                     {/* Book Now Button  */}
-                    <div className="col-md-4 mt-5 pt-1">
+                    <div className="col-md-4 mt-5" style={{ paddingTop: '32px' }}>
                         <div className="from form-btn">
                             <button onClick={handleInput} className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop">Book Now</button>
                         </div>
@@ -90,7 +87,7 @@ const FinalFrom = () => {
                 <br />
             </div>
             {/* Booking Modal  */}
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <BookingModal bookingModal={bookingModal}></BookingModal>
             </div>
         </section>

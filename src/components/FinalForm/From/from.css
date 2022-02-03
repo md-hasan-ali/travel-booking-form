@@ -1,0 +1,8 @@
+.location {
+    position: relative;
+}
+.location i {
+    position: absolute;
+    left: 10px;
+    top: 24px;
+}

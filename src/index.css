@@ -12,10 +12,21 @@ code {
     monospace;
 }
 
-
-.from input {
+.input-design input {
   width: 100%;
-  padding: 7px;
+  padding: 11px;
   outline: none;
   margin-top: 7px;
+  border: none;
+  border-bottom: 1px solid rgb(187, 183, 183);
+  background: #e3e8f0;
+  padding-left: 32px;
+}
+.input-design input::placeholder {
+  color:gray;
+  font-size: 16px;
+}
+.oneway-or-return label {
+  font-size: 16px;
+  font-weight: 600;
 }

@@ -1,15 +1,18 @@
 // import necessary file 
 import React from 'react';
+import './from.css'
 
 // create from component
-const From = ({ inputValue, label }) => {
+const From = ({ setFrom, label }) => {
     const handleOnchange = (e) => {
-        inputValue(e.target.value);
+        setFrom(e.target.value);
     }
     return (
         <div className='form-area'>
             <label>{label}</label>
-            <input onChange={handleOnchange} placeholder='Select departure' />
+            <div className='location'>
+                <input type='text' onChange={handleOnchange} placeholder='Select departure' /><i className="fas fa-map-marker"></i>
+            </div>
         </div >
     );
 };

@@ -1,14 +1,16 @@
 import React from 'react';
 
-const To = (props) => {
-    const { setTo } = props;
+const To = ({ setTo, label }) => {
+
     const handleOnchange = (e) => {
         setTo(e.target.value);
     }
     return (
         <div>
-            <label>To</label>
-            <input onChange={handleOnchange} placeholder='Select Destination' />
+            <label>{label}</label>
+            <div className="location">
+                <input onChange={handleOnchange} placeholder='Select Destination' /><i className="fas fa-map-marker"></i>
+            </div>
         </div>
     );
 };
