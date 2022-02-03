@@ -1,3 +1,4 @@
+/* Travel Class CSS  */
 .travel-class button {
     width: 100%;
     font-size: 19px;
@@ -24,11 +25,6 @@
     border-left: .3em solid transparent;
     display: none;
 }
-/* select.form-select.dropdown-menu.show {
-    max-width: 353px;
-    margin-left: 31px;
-    padding-left: 10px;
-} */
 ul.dropdown-menu.show {
     width: 100%;
     padding: 30px;

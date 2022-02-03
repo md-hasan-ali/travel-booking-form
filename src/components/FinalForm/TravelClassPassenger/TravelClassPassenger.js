@@ -40,7 +40,7 @@ const TravelClassPassenger = ({ setTravelClass, travelClass }) => {
         <div className='travel-class'>
             <div className="btn-group w-100">
                 <button className="btn btn-lg dropdown-toggle mb-2" type="button" data-bs-toggle="dropdown">
-                    {adultincrease + youngAdultIncrease + childIncrease} Passenger, {travelClass} <i className="fas fa-chevron-down"></i>
+                    {adultincrease + youngAdultIncrease + childIncrease + infantIncrease} Passenger, {travelClass} <i className="fas fa-chevron-down"></i>
                 </button>
                 <ul className="dropdown-menu">
                     <li> Select Class</li>

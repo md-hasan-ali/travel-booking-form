@@ -4,6 +4,10 @@ import './bookingModal.css'
 
 // Booking Modal Component 
 const BookingModal = ({ bookingModal }) => {
+    const handleBookingConfirm = (bookingInfo) => {
+        alert('Booking Successfully Completed...');
+        return;
+    }
     return (
         <div className="modal-dialog">
             <div className="modal-content">
@@ -34,7 +38,7 @@ const BookingModal = ({ bookingModal }) => {
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" className="btn btn-primary">Booking Confirm</button>
+                    <button onClick={() => handleBookingConfirm(bookingModal)} type="button" className="btn btn-primary">Booking Confirm</button>
                 </div>
             </div>
         </div>

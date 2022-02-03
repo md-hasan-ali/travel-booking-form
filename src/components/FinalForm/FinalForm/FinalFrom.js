@@ -17,7 +17,7 @@ const FinalFrom = () => {
     const [travelClass, setTravelClass] = useState('premium');
     const [voucher, setVoucher] = useState(0);
     const [bookingModal, setBookingModal] = useState();
-    const [trip, setTrip] = useState(true);
+    const [trip, setTrip] = useState(false);
 
     const handleInput = () => {
         const result = { from, to, departure, backdate, travelClass, voucher }
@@ -31,12 +31,12 @@ const FinalFrom = () => {
                 </div>
                 <div className="oneway-or-return mb-4">
                     <div className="form-check form-check-inline">
-                        <input onClick={() => setTrip(false)} className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                        <input onClick={() => setTrip(true)} className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
                         <label className="form-check-label" htmlFor="inlineRadio1">One Way</label>
                     </div>
 
                     <div className="form-check form-check-inline">
-                        <input onClick={() => setTrip(true)} className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                        <input onClick={() => setTrip(false)} className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
                         <label className="form-check-label" htmlFor="inlineRadio2">Return Trip</label>
                     </div>
                 </div>
@@ -60,9 +60,9 @@ const FinalFrom = () => {
                         </div>
                     </div>
                     <div className="col-md-2">
-                        {trip && <div className="return input-design">
-                            <Departure inputDate={setBackdate} label={'Return'}></Departure>
-                        </div>}
+                        <div className="return input-design">
+                            <Departure inputDate={setBackdate} label={'Return'} trip={trip}></Departure>
+                        </div>
                     </div>
                     {/* Travel Class and Passengers  */}
                     <div className="col-md-4 mt-5">
@@ -78,9 +78,10 @@ const FinalFrom = () => {
                         </div>
                     </div>
                     {/* Book Now Button  */}
-                    <div className="col-md-4 mt-5" style={{ paddingTop: '32px' }}>
+                    <div className="col-md-4 mt-5">
                         <div className="from form-btn">
-                            <button onClick={handleInput} className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop">Book Now</button>
+                            <label className='pb-2'>Booking Now</label>
+                            <button onClick={handleInput} className='btn btn-danger' data-bs-toggle="modal" data-bs-target="#staticBackdrop">Book Now</button>
                         </div>
                     </div>
                 </div>
